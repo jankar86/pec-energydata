@@ -13,7 +13,7 @@ RUN echo "http://dl-4.alpinelinux.org/alpine/v3.14/main" >> /etc/apk/repositorie
 
 # install chromedriver
 RUN apk update
-RUN apk add chromium chromium-chromedriver nano
+RUN apk add --no-cache chromium chromium-chromedriver nano bash
 
 # upgrade pip
 RUN pip install --upgrade pip
@@ -29,4 +29,6 @@ RUN pip3 install -r requirements.txt
 ##  Test output
 RUN echo "The ENV variable values for user: $PEC_USER"
 
-CMD [ "bash" ]
+#CMD ["/bin/bash"]
+#CMD [ "python3", "./test.py" ]
+ENTRYPOINT ["tail", "-f", "/dev/null"]

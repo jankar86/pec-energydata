@@ -17,9 +17,7 @@
 #
 # Output - zip file -> XML in same directory as script
 
-pecUser = ""
-pecPWD  = ""
-
+import os
 import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -28,6 +26,11 @@ import json
 from array import *
 import warnings
 
+#pecUser = ""
+#pecPWD  = ""
+pecUser = os.environ['PEC_USER']
+pecPWD  = os.environ['PEC_PASS']
+print("Running with user: %s" % pecUser)
 
 #startTime = time.localtime(time.time())
 chrome_options = Options()
@@ -132,4 +135,3 @@ except:
     raise
 finally:
     null = driver.close() #this will close crhromium
-
