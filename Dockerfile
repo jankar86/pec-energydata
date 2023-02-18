@@ -4,6 +4,8 @@
 FROM python:3.10-alpine
 
 WORKDIR /app
+ENV PEC_USER=user
+ENV PEC_PASS=pass!
 
 # update apk repo
 RUN echo "http://dl-4.alpinelinux.org/alpine/v3.14/main" >> /etc/apk/repositories && \
@@ -23,5 +25,8 @@ COPY ./src/. .
 # install selenium
 #RUN pip install selenium
 RUN pip3 install -r requirements.txt
+
+##  Test output
+RUN echo "The ENV variable values for user: $PEC_USER"
 
 CMD [ "bash" ]
