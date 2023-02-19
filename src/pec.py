@@ -26,17 +26,19 @@ import json
 from array import *
 import warnings
 
-#pecUser = ""
-#pecPWD  = ""
 pecUser = os.environ['PEC_USER']
 pecPWD  = os.environ['PEC_PASS']
-print("Running with user: %s" % pecUser)
+print("Running script with user: %s" % pecUser)
 
 #startTime = time.localtime(time.time())
 chrome_options = Options()
-chrome_options.add_argument("--window-size=1280x1024")
 chrome_options.add_argument("--headless")
-#chrome_options.add_argument("--start-maximized")
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-gpu')
+chrome_options.add_argument('--disable-dev-shm-usage')
+chrome_options.add_argument("--window-size=1920,1080")
+#self.driver = webdriver.Chrome(options=chrome_options)
+#self.driver.implicitly_wait(10)
 
 chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
 warnings.filterwarnings("ignore")
