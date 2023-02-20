@@ -22,9 +22,16 @@ ENV DISPLAY=:99
 # copy application source
 #CP ./src/requirements.txt requirements.txt
 COPY ./src/. .
+COPY crontab crontab
 
 # upgrade pip
 RUN pip install --upgrade pip
 
 # install selenium
 RUN pip install selenium
+
+## shedule the script to run
+RUN crontab crontab
+
+CMD ["crond", "-f"]
+
