@@ -9,8 +9,11 @@ Steps to test this container out locally:
 Pre-requesites:
 Have docker installed on a system you want to test this on.
 
-#Pull repo build/run locally:
+## Pull repo build/run locally:
+```
 
-git pull git@github.com:jankar86/pec-energydata.git
+git clone git@github.com:jankar86/pec-energydata.git
 cd pec-energydata
+docker run -it -w /app/src -v $(pwd):/app/src jankar86/pec-energydata:latest bash
 
+```
