@@ -1,5 +1,5 @@
 ###################################################
-# Written Feb 2022 by Dylan Davis
+# Written Feb 2022 by D.D.
 # Purpose is to grab energy usage data from
 # People's Electric Coop.
 #
